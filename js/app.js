@@ -23,20 +23,50 @@ Horns.prototype.render = function() {
 }
 
 Horns.Array = [];
+Horns.Keywords = [];
+Horns.Filter = [];
 
 Horns.readJson = () => {
     $.get('data.JSON', 'json') 
     .then(data => {
-        data.forEach(obj => {
+        data.forEach( (obj, idx) => {
             Horns.Array.push(new Horns(obj));
+            filter(Horns.Array[idx]);
         })
     })
     .then(Horns.loadHorns)
+    .then(renderFilter);
 }
 
 Horns.loadHorns = () => {
     Horns.Array.forEach(obj => obj.render());
-    console.log('ran loadHorns');
 }
+
+function renderFilter() {
+    Horns.Keywords.forEach( idx => {
+        let $newOption = $('#option').clone();
+        $newOption.text(idx);
+        $newOption.val(idx);
+        $('select').append($newOption);
+    })
+}
+
+$('#select').on('change', function() {
+    let $selection = $(this).val();
+    $('div').hide();
+    Horns.Array.forEach(idx => {
+        if($selection === idx.keyword) {
+            $('div[class="${$selection}"]').show();
+        }
+    })
+    console.log($('div[class="${$selection}"]'));
+});
+
+function filter(obj) {
+    if(Horns.Keywords.includes(obj.keyword) === false) {
+        Horns.Keywords.push(obj.keyword);
+    }
+}
+
 
 $(() => Horns.readJson());
