@@ -56,10 +56,9 @@ $('#select').on('change', function() {
     $('div').hide();
     Horns.Array.forEach(idx => {
         if($selection === idx.keyword) {
-            $('div[class="${$selection}"]').show();
+            $(`div[class="${$selection}"]`).show();
         }
     })
-    console.log($('div[class="${$selection}"]'));
 });
 
 function filter(obj) {

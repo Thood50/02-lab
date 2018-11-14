@@ -5,3 +5,9 @@ Estimate of time needed to complete: 1 hour;
 Start time: 9:05;
 Finsih time: 9:35;
 Actual time needed to complte: 30 minutes;
+
+Number and Name of feature: Filter Images;
+Estemate of time needed to complete: 1hour;
+Start time: 9:40;
+Finish time: 11:30;
+Actual time needed to complete: 1 hour and 50 minutes;
