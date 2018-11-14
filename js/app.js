@@ -53,10 +53,13 @@ function renderFilter() {
 
 $('#select').on('change', function() {
     let $selection = $(this).val();
+    console.log($(this).val());
     $('div').hide();
     Horns.Array.forEach(idx => {
         if($selection === idx.keyword) {
             $(`div[class="${$selection}"]`).show();
+        } else if($selection === 'default') {
+            $('div').show();
         }
     })
 });
