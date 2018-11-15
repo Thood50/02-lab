@@ -38,6 +38,8 @@ div {
 div:hover{
     transform: scale(2);
     width: 500px;
+    background: white;
+    border-radius: 25px;
 }
 
 #title {
