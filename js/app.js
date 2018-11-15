@@ -12,17 +12,9 @@ function Horns(obj) {
 }
 
 Horns.prototype.render = function() {
-    $('main').append('<div class="horny"></div>');
-    let objHorny = $('div[class="horny"]');
-    let objHtml = $('#photo-template').html();
-    objHorny.html(objHtml);
-
-    objHorny.find('img').attr('src', this.image);
-    objHorny.find('h2').text(this.title);
-    objHorny.find('p').text(this.description);
-    objHorny.find('img').attr('alt', this.keyword);
-    objHorny.attr('class', this.page);
-    objHorny.attr('id', this.keyword);
+    const source = $('#photo-template').html();
+    const template = Handlebars.compile(source);
+    return template(this);
 }
 
 Horns.Array = [];
@@ -53,8 +45,9 @@ Horns.readJson = () => {
 }
 
 Horns.loadHorns = () => {
-    Horns.Array.forEach((obj) => { obj.render();})
-    $('div').hide();
+    Horns.Array.forEach(obj => {
+        $('#firstSection').append(obj.render());
+    })
 }
 
 function renderFilter() {
