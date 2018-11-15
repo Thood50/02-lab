@@ -1,0 +1,67 @@
+* {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+body {
+    background-image: url("../img/Barn.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    overflow: none;
+    border-radius: 25px;
+}
+
+div {
+    float: left;
+    margin: 75px;
+    max-width: 200px;
+    max-height: 200px;
+    border: black;
+    font-size: 25px;
+}
+
+#title {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+}
+
+#select {
+    position: absolute;
+    left: 50%;
+    margin-top: 105px;
+    
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+main {
+    margin-top: 150px;
+    align-content: center;
+}
+
+div > p {
+    width: 100%;
+    color: black;
+    text-align: center;
+}
+
+div > h2 {
+    width: 100%;
+    color: black;
+    text-align: center;
+}
