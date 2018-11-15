@@ -84,6 +84,12 @@ $('#pageTurner').on('click', function(e) {
 })
 })
 
+// $("#firstSection").click(function(e) {
+//       console.log('entered')
+//       console.log(e.target.parentNode)
+
+//     });
+
 function filter(obj) {
     if(Horns.Keywords.includes(obj.keyword) === false) {
         Horns.Keywords.push(obj.keyword);

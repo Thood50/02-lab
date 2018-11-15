@@ -9,10 +9,12 @@ body {
     background-attachment: fixed;
 }
 
-/* span{
-    visibility: hidden;
-
-} */
+h2{
+    color: white;
+}
+p{
+    color: white;
+}
 #firstSection{
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +34,10 @@ div {
     max-height: 200px;
     border: black;
     font-size: 25px;
+}
+div:hover{
+    transform: scale(2);
+    width: 500px;
 }
 
 #title {
