@@ -48,6 +48,8 @@ Horns.loadHorns = () => {
     Horns.Array.forEach(obj => {
         $('#firstSection').append(obj.render());
     })
+    
+    $('div[class="pageTwo"]').hide();
 }
 
 function renderFilter() {
@@ -71,6 +73,21 @@ $('#select').on('change', function() {
         }
     })
 });
+
+$('Input').on('change', function() {
+    let $selection = $(this).attr('id');
+    console.log('in the sorter function');
+    $('div').hide();
+    console.log('fuck me');
+    if ($selection === 'horns') {
+        console.log('in if');
+        Horns.Array.sort((a, b) => a.horns - b.horns);
+    } else if ($selection === 'alpha') {
+        console.log('in else if')
+        Horns.Array.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+    }
+    Horns.loadHorns();
+})
 
 $('#pageTurner').on('click', function(e) {
     let temp = e.target.id
