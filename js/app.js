@@ -27,7 +27,7 @@ Horns.Keywords = [];
 Horns.Filter = [];
 
 Horns.readJson = () => {
-    $.get('data.JSON', 'json') 
+    $.get('data/data1.JSON', 'json') 
     .then(data => {
         data.forEach( (obj, idx) => {
             Horns.Array.push(new Horns(obj));
