@@ -51,7 +51,30 @@ div:hover{
     position: absolute;
     left: 50%;
     margin-top: 105px;
+    border-radius: 40px;
     
+}
+header {
+    flex-wrap: wrap;
+}
+
+fieldset {
+    width: 100%;
+    position: absolute;
+    left: 25%;
+    margin-top: 105px;
+    justify-content: space-between;
+}
+
+form {
+    position: absolute;
+    left: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form > h2 {
+    text-align: center;
 }
 
 footer {

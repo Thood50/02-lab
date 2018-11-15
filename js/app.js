@@ -89,6 +89,10 @@ $('Input').on('change', function() {
     Horns.loadHorns();
 })
 
+$('div').on('change', function(e) {
+    console.log('got click');
+})
+
 $('#pageTurner').on('click', function(e) {
     let temp = e.target.id
     $('div').hide();
