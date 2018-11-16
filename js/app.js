@@ -19,13 +19,11 @@ Horns.prototype.render = function() {
 
 Horns.Array = [];
 Horns.Keywords = [];
-Horns.Filter = [];
 
 Horns.readJson = () => {
     $.get('data/data1.JSON', 'json') 
     .then(data => {
         data.forEach( (obj, idx) => {
-            obj.index = idx
             obj.page = 'pageOne'
             new Horns(obj);
             filter(Horns.Array[idx]);
@@ -34,10 +32,9 @@ Horns.readJson = () => {
     $.get('data/data2.JSON', 'json') 
     .then(data => {
         data.forEach( (obj, idx) => {
-            obj.index = idx+20
             obj.page = 'pageTwo'
             new Horns(obj);
-            filter(Horns.Array[idx]);
+            filter(Horns.Array[idx+20]);
         })
     })
     .then(Horns.loadHorns)
@@ -76,9 +73,7 @@ $('#select').on('change', function() {
 
 $('Input').on('change', function() {
     let $selection = $(this).attr('id');
-    console.log('in the sorter function');
-    $('div').hide();
-    console.log('fuck me');
+    $('div').remove();
     if ($selection === 'horns') {
         console.log('in if');
         Horns.Array.sort((a, b) => a.horns - b.horns);
@@ -87,6 +82,7 @@ $('Input').on('change', function() {
         Horns.Array.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
     }
     Horns.loadHorns();
+    $('#select').val('default');
 })
 
 $('div').on('change', function(e) {
@@ -104,12 +100,6 @@ $('#pageTurner').on('click', function(e) {
         }
 })
 })
-
-// $("#firstSection").click(function(e) {
-//       console.log('entered')
-//       console.log(e.target.parentNode)
-
-//     });
 
 function filter(obj) {
     if(Horns.Keywords.includes(obj.keyword) === false) {
